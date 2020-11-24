@@ -1,0 +1,13 @@
+version: '2.4'
+services:
+  slovensko.sk:
+    build: .
+    device_cgroup_rules:
+       - 'c *:* rmw'
+    volumes:
+      - ${HOME}/.Xauthority:/root/.Xauthority:rw
+      - ${HOME}/.ditec:/root/.ditec
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /dev/bus/usb/:/dev/bus/usb/
+    environment:
+      DISPLAY: "${DISPLAY}"
