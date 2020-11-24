@@ -13,6 +13,7 @@ RUN chmod 500 /tmp/DLauncher.linux.x86_64.run
 # disig
 ADD https://download.disigcdn.sk/cdn/products/websigner/disig-web-signer-1-0-7_1.1.5-3.ubuntu_amd64.deb /tmp/disig-web-signer.deb
 RUN apt install -y /tmp/disig-web-signer.deb
+RUN apt clean
 ADD run.sh /
 RUN chmod 500 /run.sh
 CMD ["/run.sh"]
