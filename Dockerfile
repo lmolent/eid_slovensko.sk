@@ -1,11 +1,11 @@
 # OS
-FROM ubuntu:groovy
+FROM ubuntu:focal
 ENV DEBIAN_FRONTEND=noninteractive
-RUN apt update && apt dist-upgrade -y && apt install -y firefox xdg-utils default-jdk desktop-file-utils icedtea-netx unzip
+RUN apt update && apt dist-upgrade -y && apt install -y firefox xdg-utils default-jdk desktop-file-utils icedtea-netx unzip sudo
 # eID
-ADD https://eidas.minv.sk/download/Aplikacia_EID/linux/debian/Aplikacia_pre_eID_amd64_debian.tar.gz /tmp
-RUN tar -C /tmp -xzf /tmp/Aplikacia_pre_eID_amd64_debian.tar.gz
-RUN apt install -y /tmp/Aplikacia_pre_eID_amd64_debian.deb 
+ADD https://eidas.minv.sk/download/Aplikacia_EID/linux/ubuntu/Aplikacia_pre_eID_amd64_ubuntu.tar.gz /tmp
+RUN tar -C /tmp -xzf /tmp/Aplikacia_pre_eID_amd64_ubuntu.tar.gz
+RUN apt install -y /tmp/Aplikacia_pre_eID_amd64_ubuntu.deb 
 # DLauncher
 ADD https://www.slovensko.sk/static/zep/apps/DLauncher.linux.x86_64.zip /tmp
 RUN unzip -d /tmp /tmp/DLauncher.linux.x86_64.zip

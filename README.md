@@ -9,5 +9,9 @@ git clone https://github.com/lmolent/eid_slovensko.sk.git
 cd eid_slovensko.sk
 docker-compose up
 ```
+alebo
+```
+pip3 install podman-compose
+podman-compose up
+```
 
-Testovane len s Ubuntu 20.10.
